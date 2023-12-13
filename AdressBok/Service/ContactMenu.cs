@@ -94,7 +94,7 @@ public class ContactMenu : IContactMenu
         else
         {
             Console.WriteLine("No contacts available.");
-                
+
         }
 
         DisplayPressAnyKey();
@@ -130,7 +130,7 @@ public class ContactMenu : IContactMenu
         Console.WriteLine($"Phone: {contact.PhoneNumber}");
         Console.WriteLine($"Address: {contact.Address}");
 
-        
+
     }
 
     private void ShowDeleteSpecificContactOption()

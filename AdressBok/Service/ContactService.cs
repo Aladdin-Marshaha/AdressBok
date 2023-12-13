@@ -22,12 +22,12 @@ public class ContactService
                 _fileService.SaveContentToFile(JsonConvert.SerializeObject(_contactList));
             }
         }
-        catch (Exception ex) {Debug.WriteLine(ex.Message); }
+        catch (Exception ex) { Debug.WriteLine(ex.Message); }
     }
 
     public bool RemoveContactFromList(string email)
     {
-        
+
         try
         {
             var contactToRemove = _contactList.FirstOrDefault(c => c.Email == email);
@@ -38,7 +38,7 @@ public class ContactService
                 _fileService.SaveContentToFile(JsonConvert.SerializeObject(_contactList));
                 return true;
             }
-            
+
         }
         catch (Exception ex) { Debug.WriteLine(ex.Message); }
         return false;
@@ -46,7 +46,7 @@ public class ContactService
 
     }
 
-    public List<Contact> GetContactsFromList ()
+    public List<Contact> GetContactsFromList()
     {
         try
         {
