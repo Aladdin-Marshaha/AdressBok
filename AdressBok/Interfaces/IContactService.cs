@@ -2,7 +2,7 @@
 
 public interface IContactService
 {
-    IServiceResult AddContactToList(IContact contact);
-    IServiceResult GetContactFromList();
-    bool RemoveContact(string email);
+    public bool AddContactToList(IContact contact);
+    bool RemoveContactFromList(string email);
+
 }

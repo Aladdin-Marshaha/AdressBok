@@ -1,0 +1,84 @@
+
+XAML
+MainWindow.xaml
+
+--------------------------------------------------
+<TextBlock/>  Används för att skriva text på en sida som "div, p H1 i HTML"
+
+<TextBlock Text="Enter your Name"/>
+
+<TextBlock
+	Text="Enter your Name"
+	HorizontalAlignment="Center"
+	Margin="0,0,0,10"
+/>
+
+--------------------------------------------------
+
+<TextBox/>		Används när vi vill har input fält, som input i HTML där man kan skriva in.
+
+<TextBox x:Name="FirstName"/>
+
+--------------------------------------------------
+
+<StackPanel></StackPanel>  För att stacka objekt övanför varandra, Så den låter inte saker hamnar på varandra.
+
+--------------------------------------------------
+
+<StackPanel>
+	<TextBlock Text="Enter your Name"/>
+	<TextBox x:Name="FirstName"/>
+</StackPanel>
+
+--------------------------------------------------
+
+<Grid></Grid>  Används för att placera saker dinamisk på sidan för att skapa responsiva aplikation
+
+<Grid>
+	<Grid.ColumnDefinitions>
+		<ColumnDefinition Width="2*"/>
+		<ColumnDefinition Width="1*"/>
+	<Grid.ColumnDefinitions>
+</Grid>
+
+
+
+<Grid>
+	<Grid.RowDefinitions>
+		<RowDefinition Height="auto"/>
+		<RowDefinition Height="*"/>
+	<Grid.RowDefinitions>
+</Grid>
+
+
+
+<Grid>
+	<Grid.RowDefinitions>
+		<RowDefinition Height="auto"/>
+		<RowDefinition Height="*"/>
+	<Grid.RowDefinitions>
+
+	<StackPanel Grid.Row="0">     <= här bestämmer vi vill placera på hemsidan
+		<TextBlock Text="Enter your Name"/>
+		<TextBox x:Name="FirstName"/>
+	</StackPanel>
+
+</Grid>
+
+
+
+--------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+

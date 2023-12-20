@@ -11,7 +11,7 @@ public interface IContactMenu
 public class ContactMenu : IContactMenu
 {
     private readonly ContactService _contactService = new ContactService();
-    private IEnumerable<object>? contactList;
+    private IEnumerable<IContact>? contactList;
 
     public void ShowMainMenu()
 
@@ -82,7 +82,7 @@ public class ContactMenu : IContactMenu
 
         if (contactList.Any())
         {
-            foreach (Contact contact in contactList)
+            foreach (IContact contact in contactList)
             {
                 Console.WriteLine($"Name: {contact.FirstName} {contact.LastName}");
                 Console.WriteLine($"Email: {contact.Email}");
@@ -121,7 +121,7 @@ public class ContactMenu : IContactMenu
         DisplayPressAnyKey();
 
     }
-    private void DisplayContactDetails(Contact contact)
+    private void DisplayContactDetails(IContact contact)
     {
         DisplayMenuTitle($"Contact Details for {contact.FirstName} {contact.LastName}");
 
@@ -129,8 +129,6 @@ public class ContactMenu : IContactMenu
         Console.WriteLine($"Email: {contact.Email}");
         Console.WriteLine($"Phone: {contact.PhoneNumber}");
         Console.WriteLine($"Address: {contact.Address}");
-
-
     }
 
     private void ShowDeleteSpecificContactOption()
