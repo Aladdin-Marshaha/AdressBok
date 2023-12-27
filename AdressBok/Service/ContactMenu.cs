@@ -3,14 +3,15 @@ using AdressBok.Models;
 
 namespace AdressBok.Service;
 
-public interface IContactMenu
-{
-    void ShowMainMenu();
-}
-
 public class ContactMenu : IContactMenu
 {
-    private readonly ContactService _contactService = new ContactService();
+    private readonly IContactService _contactService ;
+
+    public ContactMenu(IContactService contactService)
+    {
+        _contactService = contactService;
+    }
+
     private IEnumerable<IContact>? contactList;
 
     public void ShowMainMenu()
@@ -107,7 +108,7 @@ public class ContactMenu : IContactMenu
         Console.Write("Enter the email of the contact to view details: ");
         var emailToView = Console.ReadLine();
 
-        var contactToShow = _contactService.GetContactByEmail(emailToView);
+        var contactToShow = _contactService.GetContactByEmail(emailToView!);
 
         if (contactToShow != null)
         {
@@ -175,11 +176,3 @@ public class ContactMenu : IContactMenu
         Console.ReadKey();
     }
 }
-
-
-// 1*  att lägga till en kontakt i en lista **
-// 2*  att lista upp samtliga kontakter på ett snyggt och prydligt sätt **
-// 3*  att sen detaljerad information om en specifik kontakt ska visas.
-// 4*  att kunna ta bort en kontakt genom att ange kontaktens e-postadress**
-
-// crud  ,, creat read uppdate delete

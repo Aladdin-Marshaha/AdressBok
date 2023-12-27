@@ -8,9 +8,15 @@ namespace AdressBok.Service;
 
 public class ContactService : IContactService
 {
-    private readonly FileService _fileService = new FileService(@"C:\Weddutveckling\CSharp\Adressbok\content.json");
+    private readonly IFileService _fileService ;
 
     private List<IContact> _contactList = [];
+
+    public ContactService(IFileService fileService)
+    {
+        _fileService = fileService;
+    }
+
     /// <summary>
     /// Lägger till contact till contact list
     /// </summary>
